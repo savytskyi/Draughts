@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8222BC615D246AB00B57C22 /* CongratulationsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8222BC515D246AB00B57C22 /* CongratulationsLayer.m */; };
+		A8283C3E15D02BBE00B2D883 /* PlayerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8283C3D15D02BBE00B2D883 /* PlayerTwo.m */; };
+		A8A6995D15D05BB500DF2A37 /* GameLevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A6995C15D05BB500DF2A37 /* GameLevelLayer.m */; };
 		A8A7666315CDA6F80009712B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A7666215CDA6F80009712B /* QuartzCore.framework */; };
 		A8A7666515CDA6F80009712B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A7666415CDA6F80009712B /* OpenGLES.framework */; };
 		A8A7666715CDA6F80009712B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A7666615CDA6F80009712B /* OpenAL.framework */; };
@@ -131,11 +134,26 @@
 		A8A767E615CDA6FB0009712B /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = A8A767E515CDA6FB0009712B /* vec4.c */; };
 		A8A767EB15CDA6FB0009712B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A767EA15CDA6FB0009712B /* main.m */; };
 		A8A767EE15CDA6FB0009712B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A767ED15CDA6FB0009712B /* AppDelegate.m */; };
-		A8A767F115CDA6FB0009712B /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A767F015CDA6FB0009712B /* HelloWorldLayer.m */; };
-		A8A767F415CDA6FB0009712B /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A767F315CDA6FB0009712B /* IntroLayer.m */; };
+		A8A7680115CDA71C0009712B /* LoadingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A767FD15CDA71C0009712B /* LoadingLayer.m */; };
+		A8A7680215CDA71C0009712B /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A767FF15CDA71C0009712B /* MainMenuLayer.m */; };
+		A8A7680715CE72430009712B /* DraughtsSheet-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8A7680315CE72430009712B /* DraughtsSheet-ipadhd.plist */; };
+		A8A7680815CE72430009712B /* DraughtsSheet-ipadhd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = A8A7680415CE72430009712B /* DraughtsSheet-ipadhd.pvr.ccz */; };
+		A8A7680915CE72430009712B /* DraughtsSheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8A7680515CE72430009712B /* DraughtsSheet.plist */; };
+		A8A7680A15CE72430009712B /* DraughtsSheet.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = A8A7680615CE72430009712B /* DraughtsSheet.pvr.ccz */; };
+		A8AC5CEA15D04C890050A26B /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AC5CE915D04C890050A26B /* PlayerEntity.m */; };
+		A8DEF0F115CFAA89007A05AF /* Figure.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF0F015CFAA89007A05AF /* Figure.m */; };
+		A8DEF0F915CFB591007A05AF /* SettingsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF0F815CFB590007A05AF /* SettingsLayer.m */; };
+		A8DEF0FB15CFF441007A05AF /* PlayerOne.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF0FA15CFF441007A05AF /* PlayerOne.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A8222BC415D246AB00B57C22 /* CongratulationsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CongratulationsLayer.h; sourceTree = "<group>"; };
+		A8222BC515D246AB00B57C22 /* CongratulationsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongratulationsLayer.m; sourceTree = "<group>"; };
+		A8283C3C15D02BBE00B2D883 /* PlayerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerTwo.h; sourceTree = "<group>"; };
+		A8283C3D15D02BBE00B2D883 /* PlayerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTwo.m; sourceTree = "<group>"; };
+		A8A6995B15D05BB500DF2A37 /* GameLevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLevelLayer.h; sourceTree = "<group>"; };
+		A8A6995C15D05BB500DF2A37 /* GameLevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLevelLayer.m; sourceTree = "<group>"; };
+		A8A75C7815CE93D9004BC494 /* PlayerOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerOne.h; sourceTree = "<group>"; };
 		A8A7665E15CDA6F80009712B /* Draughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A7666215CDA6F80009712B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A8A7666415CDA6F80009712B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -394,10 +412,22 @@
 		A8A767EA15CDA6FB0009712B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8A767EC15CDA6FB0009712B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A8A767ED15CDA6FB0009712B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A8A767EF15CDA6FB0009712B /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		A8A767F015CDA6FB0009712B /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
-		A8A767F215CDA6FB0009712B /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		A8A767F315CDA6FB0009712B /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		A8A767FB15CDA71C0009712B /* GameLevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLevelLayer.m; sourceTree = "<group>"; };
+		A8A767FC15CDA71C0009712B /* LoadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingLayer.h; sourceTree = "<group>"; };
+		A8A767FD15CDA71C0009712B /* LoadingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingLayer.m; sourceTree = "<group>"; };
+		A8A767FE15CDA71C0009712B /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
+		A8A767FF15CDA71C0009712B /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
+		A8A7680315CE72430009712B /* DraughtsSheet-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "DraughtsSheet-ipadhd.plist"; path = "Resources/DraughtsSheet-ipadhd.plist"; sourceTree = "<group>"; };
+		A8A7680415CE72430009712B /* DraughtsSheet-ipadhd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DraughtsSheet-ipadhd.pvr.ccz"; path = "Resources/DraughtsSheet-ipadhd.pvr.ccz"; sourceTree = "<group>"; };
+		A8A7680515CE72430009712B /* DraughtsSheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DraughtsSheet.plist; path = Resources/DraughtsSheet.plist; sourceTree = "<group>"; };
+		A8A7680615CE72430009712B /* DraughtsSheet.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = DraughtsSheet.pvr.ccz; path = Resources/DraughtsSheet.pvr.ccz; sourceTree = "<group>"; };
+		A8AC5CE815D04C890050A26B /* PlayerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEntity.h; sourceTree = "<group>"; };
+		A8AC5CE915D04C890050A26B /* PlayerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerEntity.m; sourceTree = "<group>"; };
+		A8DEF0EF15CFAA89007A05AF /* Figure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Figure.h; sourceTree = "<group>"; };
+		A8DEF0F015CFAA89007A05AF /* Figure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Figure.m; sourceTree = "<group>"; };
+		A8DEF0F715CFB590007A05AF /* SettingsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLayer.h; sourceTree = "<group>"; };
+		A8DEF0F815CFB590007A05AF /* SettingsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLayer.m; sourceTree = "<group>"; };
+		A8DEF0FA15CFF441007A05AF /* PlayerOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerOne.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,10 +488,24 @@
 			children = (
 				A8A767EC15CDA6FB0009712B /* AppDelegate.h */,
 				A8A767ED15CDA6FB0009712B /* AppDelegate.m */,
-				A8A767EF15CDA6FB0009712B /* HelloWorldLayer.h */,
-				A8A767F015CDA6FB0009712B /* HelloWorldLayer.m */,
-				A8A767F215CDA6FB0009712B /* IntroLayer.h */,
-				A8A767F315CDA6FB0009712B /* IntroLayer.m */,
+				A8A6995B15D05BB500DF2A37 /* GameLevelLayer.h */,
+				A8A6995C15D05BB500DF2A37 /* GameLevelLayer.m */,
+				A8AC5CE815D04C890050A26B /* PlayerEntity.h */,
+				A8AC5CE915D04C890050A26B /* PlayerEntity.m */,
+				A8A75C7815CE93D9004BC494 /* PlayerOne.h */,
+				A8DEF0FA15CFF441007A05AF /* PlayerOne.m */,
+				A8283C3C15D02BBE00B2D883 /* PlayerTwo.h */,
+				A8283C3D15D02BBE00B2D883 /* PlayerTwo.m */,
+				A8DEF0F715CFB590007A05AF /* SettingsLayer.h */,
+				A8DEF0F815CFB590007A05AF /* SettingsLayer.m */,
+				A8222BC415D246AB00B57C22 /* CongratulationsLayer.h */,
+				A8222BC515D246AB00B57C22 /* CongratulationsLayer.m */,
+				A8DEF0EF15CFAA89007A05AF /* Figure.h */,
+				A8DEF0F015CFAA89007A05AF /* Figure.m */,
+				A8A767FC15CDA71C0009712B /* LoadingLayer.h */,
+				A8A767FD15CDA71C0009712B /* LoadingLayer.m */,
+				A8A767FE15CDA71C0009712B /* MainMenuLayer.h */,
+				A8A767FF15CDA71C0009712B /* MainMenuLayer.m */,
 				A8A7667515CDA6F80009712B /* Resources */,
 				A8A7668F15CDA6F90009712B /* libs */,
 				A8A767E815CDA6FB0009712B /* Supporting Files */,
@@ -472,6 +516,11 @@
 		A8A7667515CDA6F80009712B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A8A7680315CE72430009712B /* DraughtsSheet-ipadhd.plist */,
+				A8A7680415CE72430009712B /* DraughtsSheet-ipadhd.pvr.ccz */,
+				A8A7680515CE72430009712B /* DraughtsSheet.plist */,
+				A8A7680615CE72430009712B /* DraughtsSheet.pvr.ccz */,
+				A8A767FB15CDA71C0009712B /* GameLevelLayer.m */,
 				A8A7667615CDA6F80009712B /* Default.png */,
 				A8A7667815CDA6F80009712B /* Default-Landscape~ipad.png */,
 				A8A7667A15CDA6F90009712B /* fps_images.png */,
@@ -895,6 +944,10 @@
 				A8A7668B15CDA6F90009712B /* Icon@2x.png in Resources */,
 				A8A7668E15CDA6F90009712B /* iTunesArtwork in Resources */,
 				A8A767CC15CDA6FB0009712B /* ChangeLog in Resources */,
+				A8A7680715CE72430009712B /* DraughtsSheet-ipadhd.plist in Resources */,
+				A8A7680815CE72430009712B /* DraughtsSheet-ipadhd.pvr.ccz in Resources */,
+				A8A7680915CE72430009712B /* DraughtsSheet.plist in Resources */,
+				A8A7680A15CE72430009712B /* DraughtsSheet.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1007,8 +1060,15 @@
 				A8A767E615CDA6FB0009712B /* vec4.c in Sources */,
 				A8A767EB15CDA6FB0009712B /* main.m in Sources */,
 				A8A767EE15CDA6FB0009712B /* AppDelegate.m in Sources */,
-				A8A767F115CDA6FB0009712B /* HelloWorldLayer.m in Sources */,
-				A8A767F415CDA6FB0009712B /* IntroLayer.m in Sources */,
+				A8A7680115CDA71C0009712B /* LoadingLayer.m in Sources */,
+				A8A7680215CDA71C0009712B /* MainMenuLayer.m in Sources */,
+				A8DEF0F115CFAA89007A05AF /* Figure.m in Sources */,
+				A8DEF0F915CFB591007A05AF /* SettingsLayer.m in Sources */,
+				A8DEF0FB15CFF441007A05AF /* PlayerOne.m in Sources */,
+				A8283C3E15D02BBE00B2D883 /* PlayerTwo.m in Sources */,
+				A8AC5CEA15D04C890050A26B /* PlayerEntity.m in Sources */,
+				A8A6995D15D05BB500DF2A37 /* GameLevelLayer.m in Sources */,
+				A8222BC615D246AB00B57C22 /* CongratulationsLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,6 +1172,7 @@
 				A8A767F915CDA6FB0009712B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
