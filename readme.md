@@ -14,4 +14,4 @@ Three game modes:
 
 [iTunes link:](http://)
 
-![Draughts screenshot](https://github.com/savitsky/raughts/blob/master/screen.png?raw=true)
+![Draughts screenshot](https://github.com/savitsky/Draughts/blob/master/screenshot.png?raw=true)
