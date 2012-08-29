@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		A8222BC615D246AB00B57C22 /* CongratulationsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8222BC515D246AB00B57C22 /* CongratulationsLayer.m */; };
 		A8283C3E15D02BBE00B2D883 /* PlayerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8283C3D15D02BBE00B2D883 /* PlayerTwo.m */; };
+		A8808F4E15E8BC02004A6BB3 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A8808F4D15E8BC02004A6BB3 /* Default-Landscape@2x~ipad.png */; };
+		A8808F5215E8C01A004A6BB3 /* loading-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A8808F5015E8C01A004A6BB3 /* loading-ipad.png */; };
+		A8808F5315E8C01A004A6BB3 /* loading-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A8808F5115E8C01A004A6BB3 /* loading-ipadhd.png */; };
+		A8808F5715E8D4DA004A6BB3 /* play-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A8808F5615E8D4DA004A6BB3 /* play-ipadhd.png */; };
+		A8808F5915E8D4F8004A6BB3 /* play-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A8808F5815E8D4F8004A6BB3 /* play-ipad.png */; };
 		A8A6995D15D05BB500DF2A37 /* GameLevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A6995C15D05BB500DF2A37 /* GameLevelLayer.m */; };
 		A8A7666315CDA6F80009712B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A7666215CDA6F80009712B /* QuartzCore.framework */; };
 		A8A7666515CDA6F80009712B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A7666415CDA6F80009712B /* OpenGLES.framework */; };
@@ -138,12 +143,16 @@
 		A8A7680215CDA71C0009712B /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A767FF15CDA71C0009712B /* MainMenuLayer.m */; };
 		A8A7680715CE72430009712B /* DraughtsSheet-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8A7680315CE72430009712B /* DraughtsSheet-ipadhd.plist */; };
 		A8A7680815CE72430009712B /* DraughtsSheet-ipadhd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = A8A7680415CE72430009712B /* DraughtsSheet-ipadhd.pvr.ccz */; };
-		A8A7680915CE72430009712B /* DraughtsSheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8A7680515CE72430009712B /* DraughtsSheet.plist */; };
-		A8A7680A15CE72430009712B /* DraughtsSheet.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = A8A7680615CE72430009712B /* DraughtsSheet.pvr.ccz */; };
 		A8AC5CEA15D04C890050A26B /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AC5CE915D04C890050A26B /* PlayerEntity.m */; };
+		A8DE213215E6359300B400E3 /* Tick-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A8DE213015E6359300B400E3 /* Tick-ipad.png */; };
+		A8DE213315E6359300B400E3 /* Tick-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = A8DE213115E6359300B400E3 /* Tick-ipadhd.png */; };
 		A8DEF0F115CFAA89007A05AF /* Figure.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF0F015CFAA89007A05AF /* Figure.m */; };
 		A8DEF0F915CFB591007A05AF /* SettingsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF0F815CFB590007A05AF /* SettingsLayer.m */; };
 		A8DEF0FB15CFF441007A05AF /* PlayerOne.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF0FA15CFF441007A05AF /* PlayerOne.m */; };
+		A8E749BD15E8BB6700C451C1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8E749BB15E8BB6700C451C1 /* Default@2x.png */; };
+		A8F5DE6915D38B760083CF2F /* DraughtsSheet-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8F5DE6715D38B760083CF2F /* DraughtsSheet-ipad.plist */; };
+		A8F5DE6A15D38B760083CF2F /* DraughtsSheet-ipad.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = A8F5DE6815D38B760083CF2F /* DraughtsSheet-ipad.pvr.ccz */; };
+		A8F5DE6E15D38E2C0083CF2F /* UserControls.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F5DE6D15D38E2C0083CF2F /* UserControls.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +160,11 @@
 		A8222BC515D246AB00B57C22 /* CongratulationsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongratulationsLayer.m; sourceTree = "<group>"; };
 		A8283C3C15D02BBE00B2D883 /* PlayerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerTwo.h; sourceTree = "<group>"; };
 		A8283C3D15D02BBE00B2D883 /* PlayerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTwo.m; sourceTree = "<group>"; };
+		A8808F4D15E8BC02004A6BB3 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "../Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		A8808F5015E8C01A004A6BB3 /* loading-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading-ipad.png"; path = "Resources/loading-ipad.png"; sourceTree = "<group>"; };
+		A8808F5115E8C01A004A6BB3 /* loading-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading-ipadhd.png"; path = "Resources/loading-ipadhd.png"; sourceTree = "<group>"; };
+		A8808F5615E8D4DA004A6BB3 /* play-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play-ipadhd.png"; path = "Resources/play-ipadhd.png"; sourceTree = "<group>"; };
+		A8808F5815E8D4F8004A6BB3 /* play-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play-ipad.png"; path = "Resources/play-ipad.png"; sourceTree = "<group>"; };
 		A8A6995B15D05BB500DF2A37 /* GameLevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLevelLayer.h; sourceTree = "<group>"; };
 		A8A6995C15D05BB500DF2A37 /* GameLevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLevelLayer.m; sourceTree = "<group>"; };
 		A8A75C7815CE93D9004BC494 /* PlayerOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerOne.h; sourceTree = "<group>"; };
@@ -419,15 +433,20 @@
 		A8A767FF15CDA71C0009712B /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
 		A8A7680315CE72430009712B /* DraughtsSheet-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "DraughtsSheet-ipadhd.plist"; path = "Resources/DraughtsSheet-ipadhd.plist"; sourceTree = "<group>"; };
 		A8A7680415CE72430009712B /* DraughtsSheet-ipadhd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DraughtsSheet-ipadhd.pvr.ccz"; path = "Resources/DraughtsSheet-ipadhd.pvr.ccz"; sourceTree = "<group>"; };
-		A8A7680515CE72430009712B /* DraughtsSheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DraughtsSheet.plist; path = Resources/DraughtsSheet.plist; sourceTree = "<group>"; };
-		A8A7680615CE72430009712B /* DraughtsSheet.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = DraughtsSheet.pvr.ccz; path = Resources/DraughtsSheet.pvr.ccz; sourceTree = "<group>"; };
 		A8AC5CE815D04C890050A26B /* PlayerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEntity.h; sourceTree = "<group>"; };
 		A8AC5CE915D04C890050A26B /* PlayerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerEntity.m; sourceTree = "<group>"; };
+		A8DE213015E6359300B400E3 /* Tick-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tick-ipad.png"; path = "Resources/Tick-ipad.png"; sourceTree = "<group>"; };
+		A8DE213115E6359300B400E3 /* Tick-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tick-ipadhd.png"; path = "Resources/Tick-ipadhd.png"; sourceTree = "<group>"; };
 		A8DEF0EF15CFAA89007A05AF /* Figure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Figure.h; sourceTree = "<group>"; };
 		A8DEF0F015CFAA89007A05AF /* Figure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Figure.m; sourceTree = "<group>"; };
 		A8DEF0F715CFB590007A05AF /* SettingsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLayer.h; sourceTree = "<group>"; };
 		A8DEF0F815CFB590007A05AF /* SettingsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLayer.m; sourceTree = "<group>"; };
 		A8DEF0FA15CFF441007A05AF /* PlayerOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerOne.m; sourceTree = "<group>"; };
+		A8E749BB15E8BB6700C451C1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
+		A8F5DE6715D38B760083CF2F /* DraughtsSheet-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "DraughtsSheet-ipad.plist"; path = "Resources/DraughtsSheet-ipad.plist"; sourceTree = "<group>"; };
+		A8F5DE6815D38B760083CF2F /* DraughtsSheet-ipad.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DraughtsSheet-ipad.pvr.ccz"; path = "Resources/DraughtsSheet-ipad.pvr.ccz"; sourceTree = "<group>"; };
+		A8F5DE6C15D38E2C0083CF2F /* UserControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserControls.h; sourceTree = "<group>"; };
+		A8F5DE6D15D38E2C0083CF2F /* UserControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserControls.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,6 +515,8 @@
 				A8DEF0FA15CFF441007A05AF /* PlayerOne.m */,
 				A8283C3C15D02BBE00B2D883 /* PlayerTwo.h */,
 				A8283C3D15D02BBE00B2D883 /* PlayerTwo.m */,
+				A8F5DE6C15D38E2C0083CF2F /* UserControls.h */,
+				A8F5DE6D15D38E2C0083CF2F /* UserControls.m */,
 				A8DEF0F715CFB590007A05AF /* SettingsLayer.h */,
 				A8DEF0F815CFB590007A05AF /* SettingsLayer.m */,
 				A8222BC415D246AB00B57C22 /* CongratulationsLayer.h */,
@@ -516,10 +537,18 @@
 		A8A7667515CDA6F80009712B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A8808F5015E8C01A004A6BB3 /* loading-ipad.png */,
+				A8808F5115E8C01A004A6BB3 /* loading-ipadhd.png */,
+				A8808F4D15E8BC02004A6BB3 /* Default-Landscape@2x~ipad.png */,
+				A8E749BB15E8BB6700C451C1 /* Default@2x.png */,
+				A8808F5615E8D4DA004A6BB3 /* play-ipadhd.png */,
+				A8808F5815E8D4F8004A6BB3 /* play-ipad.png */,
+				A8DE213015E6359300B400E3 /* Tick-ipad.png */,
+				A8DE213115E6359300B400E3 /* Tick-ipadhd.png */,
 				A8A7680315CE72430009712B /* DraughtsSheet-ipadhd.plist */,
 				A8A7680415CE72430009712B /* DraughtsSheet-ipadhd.pvr.ccz */,
-				A8A7680515CE72430009712B /* DraughtsSheet.plist */,
-				A8A7680615CE72430009712B /* DraughtsSheet.pvr.ccz */,
+				A8F5DE6715D38B760083CF2F /* DraughtsSheet-ipad.plist */,
+				A8F5DE6815D38B760083CF2F /* DraughtsSheet-ipad.pvr.ccz */,
 				A8A767FB15CDA71C0009712B /* GameLevelLayer.m */,
 				A8A7667615CDA6F80009712B /* Default.png */,
 				A8A7667815CDA6F80009712B /* Default-Landscape~ipad.png */,
@@ -946,8 +975,16 @@
 				A8A767CC15CDA6FB0009712B /* ChangeLog in Resources */,
 				A8A7680715CE72430009712B /* DraughtsSheet-ipadhd.plist in Resources */,
 				A8A7680815CE72430009712B /* DraughtsSheet-ipadhd.pvr.ccz in Resources */,
-				A8A7680915CE72430009712B /* DraughtsSheet.plist in Resources */,
-				A8A7680A15CE72430009712B /* DraughtsSheet.pvr.ccz in Resources */,
+				A8F5DE6915D38B760083CF2F /* DraughtsSheet-ipad.plist in Resources */,
+				A8F5DE6A15D38B760083CF2F /* DraughtsSheet-ipad.pvr.ccz in Resources */,
+				A8DE213215E6359300B400E3 /* Tick-ipad.png in Resources */,
+				A8DE213315E6359300B400E3 /* Tick-ipadhd.png in Resources */,
+				A8E749BD15E8BB6700C451C1 /* Default@2x.png in Resources */,
+				A8808F4E15E8BC02004A6BB3 /* Default-Landscape@2x~ipad.png in Resources */,
+				A8808F5215E8C01A004A6BB3 /* loading-ipad.png in Resources */,
+				A8808F5315E8C01A004A6BB3 /* loading-ipadhd.png in Resources */,
+				A8808F5715E8D4DA004A6BB3 /* play-ipadhd.png in Resources */,
+				A8808F5915E8D4F8004A6BB3 /* play-ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1069,6 +1106,7 @@
 				A8AC5CEA15D04C890050A26B /* PlayerEntity.m in Sources */,
 				A8A6995D15D05BB500DF2A37 /* GameLevelLayer.m in Sources */,
 				A8222BC615D246AB00B57C22 /* CongratulationsLayer.m in Sources */,
+				A8F5DE6E15D38E2C0083CF2F /* UserControls.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

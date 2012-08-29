@@ -18,8 +18,8 @@ static PlayerEntity *instanceOfFirstPlayer;
 }
 
 - (id) initWithFigures:(NSString *)figureName boardSize:(float) boardSize startPoint:(CGPoint)startPoint
-                border:(float)border oneStep:(float)oneStep player:(int)player {
-    if ((self = [super initWithFigures:figureName boardSize:boardSize startPoint:startPoint border:border oneStep:oneStep player:player])) {
+                border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gameType playerTwo:(BOOL)playerTwo {
+    if ((self = [super initWithFigures:figureName boardSize:boardSize startPoint:startPoint border:border oneStep:oneStep player:player gameType:gameType playerTwo:playerTwo])) {
         _yourMove = YES;
         instanceOfFirstPlayer = self;
         _anotherMove = NO;
@@ -30,7 +30,7 @@ static PlayerEntity *instanceOfFirstPlayer;
 }
 
 - (void) registerWithTouchDispatcher {
-    [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:-2 swallowsTouches:YES];
+    [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:-3 swallowsTouches:YES];
 }
 
 - (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -41,19 +41,18 @@ static PlayerEntity *instanceOfFirstPlayer;
     BOOL isTouchHandled = NO;
     Figure *figure;
     
+    if (_anotherMove == YES && _killerFigure != nil && CGRectContainsPoint([_killerFigure boundingBox], touchLocation)) {
+        firstLocation = _killerFigure.position;
+        [self findPossibleMovesForFigure:_killerFigure killingMovesOnly:YES];
+        isTouchHandled = YES;
+    }
+    
+    if (_yourMove && !_anotherMove)
     CCARRAY_FOREACH([_playerBatch children], figure) {
         if (figure.dead == NO && CGRectContainsPoint([figure boundingBox], touchLocation)) {
-            if (_anotherMove == YES && CGPointEqualToPoint(_killerFigure.position,figure.position) && _yourMove == NO) {
-                firstLocation = figure.position;
-                [self findPossibleMovesForFigure:figure killingMovesOnly:YES];
-                isTouchHandled = YES;
-            }
-            if (_yourMove) {
-                firstLocation = figure.position;
-                [self findPossibleMovesForFigure:figure killingMovesOnly:NO];
-                isTouchHandled = YES;
-            }
-            
+            firstLocation = figure.position;
+            [self findPossibleMovesForFigure:figure killingMovesOnly:NO];
+            isTouchHandled = YES;
             break;
         }
     }
@@ -84,11 +83,19 @@ static PlayerEntity *instanceOfFirstPlayer;
     possibleCellPoint = ccp(figure.position.x + oneCellWidth, figure.position.y + oneCellWidth);
     [self isItPossibleToMoveThere:possibleCellPoint opponentFigure:[[PlayerTwo sharedSecondPlayer] playerBatch] player:YES killingMovesOnly:killingMovesOnly isKing:[figure king]];
     
-    possibleCellPoint = ccp(figure.position.x - oneCellWidth, figure.position.y - oneCellWidth);
-    [self isItPossibleToMoveThere:possibleCellPoint opponentFigure:[[PlayerTwo sharedSecondPlayer] playerBatch] player:YES killingMovesOnly:killingMovesOnly isKing:[figure king]];
     
-    possibleCellPoint = ccp(figure.position.x + oneCellWidth, figure.position.y - oneCellWidth);
-    [self isItPossibleToMoveThere:possibleCellPoint opponentFigure:[[PlayerTwo sharedSecondPlayer] playerBatch] player:YES killingMovesOnly:killingMovesOnly isKing:[figure king]];
+    if ((_gameType == 0 && figure.king == YES) || _gameType != 0) {
+    //if (figure.king == YES) {
+        //In soviet mode game pieces can move backwards ONLY TO KILL OPPONENT
+        if ((_gameType == 2 || _gameType == 1) && figure.king == NO) {
+            killingMovesOnly = YES;
+        }
+        possibleCellPoint = ccp(figure.position.x - oneCellWidth, figure.position.y - oneCellWidth);
+        [self isItPossibleToMoveThere:possibleCellPoint opponentFigure:[[PlayerTwo sharedSecondPlayer] playerBatch] player:YES killingMovesOnly:killingMovesOnly isKing:[figure king]];
+    
+        possibleCellPoint = ccp(figure.position.x + oneCellWidth, figure.position.y - oneCellWidth);
+        [self isItPossibleToMoveThere:possibleCellPoint opponentFigure:[[PlayerTwo sharedSecondPlayer] playerBatch] player:YES killingMovesOnly:killingMovesOnly isKing:[figure king]];
+    }
 }
 
 @end

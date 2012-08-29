@@ -9,16 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "GameLevelLayer.h"
-
-typedef enum {
-    tagNewGame1,
-}congratsLayerObjects;
+#import "LoadingLayer.h"
 
 @interface CongratulationsLayer : CCLayer {
     
 }
 
-+ (id) sceneWith:(NSString *)winner;
++ (id) createCongratsWith:(NSString *)winner;
 - (id) initWith:(NSString *)winner;
 
 @end

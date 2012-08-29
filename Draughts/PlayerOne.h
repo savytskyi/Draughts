@@ -27,7 +27,7 @@
 
 + (PlayerOne *) sharedFirstPlayer;
 - (id) initWithFigures:(NSString *)figureName boardSize:(float) boardSize startPoint:(CGPoint)startPoint
-                border:(float)border oneStep:(float)oneStep player:(int)player;
+                border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gameType playerTwo:(BOOL)playerTwo;
 
 - (void) findPossibleMovesForFigure:(Figure *)figure killingMovesOnly:(BOOL)killingMovesOnly;
 

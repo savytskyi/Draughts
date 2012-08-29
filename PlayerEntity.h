@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-#define FIGURE_SPEED 1//0.3f
-#define PAUSE_BEFORE_CONGRATS 5
-
 @class Figure;
 @class GameLevelLayer;
 @class SettingsLayer;
@@ -67,12 +64,11 @@ typedef enum {
 - (BOOL) continueKillingLine:(CCSpriteBatchNode *)opponent from:(CGPoint)point previousPoint:(CGPoint)previousPoint;
 - (BOOL) killActionsAt:(CGPoint)possibleCell;
 - (void) findKingSpriteWithPosition:(CGPoint)oldPosition changeItTo:(CGPoint)newPosition command:(NSString *)command;
-- (void) endGame:(id)selector;
+- (void) endGame;
 - (CGRect) getBoardRect;
 - (CGPoint) findMultiplierWithLastLocation:(CGPoint)finish startLocation:(CGPoint)start;
 - (BOOL) didFigureStoppedBefore:(CGPoint)killedCell from:(CGPoint)firstLocation to:(CGPoint)stopLocation;
-- (CCSprite *) returnKingAt:(CGPoint)point visible:(BOOL)visible;
-- (void) findaPlaceForAKilledFigure:(Figure *)figure duration:(float)durationForKilledFigure;
+
 
 @end
 

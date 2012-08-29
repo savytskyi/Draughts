@@ -13,17 +13,21 @@
 #import "PlayerOne.h"
 #import "PlayerTwo.h"
 #import "LoadingLayer.h"
-
-typedef enum {
-    tagSettings,
-    tagNewGame,
-}settingsLayerObjects;
+#import "UserControls.h"
 
 @interface SettingsLayer : CCLayer {
-    
+    float rightSettingsBorder;
+    float leftSettingsBorder;
+    float upperSettingsBorder;
+    float lowerSettingsBorder;
+    float textureSize;
+    BOOL makeAMoveAfterSettingsClosing;
 }
 
++ (id) scene;
 + (SettingsLayer *) sharedSettingsLayer;
-- (void) showCongratulationsFor:(NSString *)winner;
+
+- (void) drawSettingsMenuBackgound;
+- (void) addSettiingsMenuItems;
 
 @end

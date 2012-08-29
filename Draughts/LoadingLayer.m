@@ -2,18 +2,22 @@
 
 @implementation LoadingLayer
 
-+ (id) loadTargetScene:(TargetScenes)loadScene {
-    return [[[self alloc] initWithScene:loadScene] autorelease];
++ (id) loadTargetScene:(TargetScenes)loadScene withGameType:(int)gameType playerTwo:(BOOL)playerTwo {
+    return [[[self alloc] initWithScene:loadScene withGameType:gameType playerTwo:playerTwo] autorelease];
 }
 
-- (id) initWithScene:(TargetScenes)loadScene {
+- (id) initWithScene:(TargetScenes)loadScene withGameType:(int)gameType playerTwo:(BOOL)playerTwo {
     if ( (self = [super init]) ) {
         targetScene = loadScene;
-        CCLabelTTF *loadingLabel = [CCLabelTTF labelWithString:@"Loading..." fontName:@"Helvetica" fontSize:24];
+        //CCLabelTTF *loadingLabel = [CCLabelTTF labelWithString:@"Loading..." fontName:@"Helvetica" fontSize:24];
+        CCSprite *loading = [CCSprite spriteWithFile:@"loading.png"];
+        newGameType = gameType;
+        newPlayerTwo = playerTwo;
         
         CGSize size = [[CCDirector sharedDirector] winSize];
-        loadingLabel.position = CGPointMake(size.width/2, size.height/2);
-        [self addChild:loadingLabel];
+        loading.position = ccp(size.width * 0.5f, size.height * 0.5f);
+        //loadingLabel.position = CGPointMake(size.width/2, size.height/2);
+        [self addChild:loading];
         
         [self scheduleUpdate];
     }
@@ -33,7 +37,7 @@
             break;
             
         case TargetSceneFirstLevel:
-            [[CCDirector sharedDirector] replaceScene:[GameLevelLayer scene]];
+            [[CCDirector sharedDirector] replaceScene:[GameLevelLayer sceneWithGameType:newGameType playerTwo:newPlayerTwo]];
             break;
             
         case TargetSceneSecondLevel:

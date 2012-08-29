@@ -24,14 +24,16 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
     if ((self = [super init])) {
         
         
+        
         _gameType = gameType;
-        self.isTouchEnabled = YES;
+        if (player != 2 || (player == 2 && playerTwo == YES))
+            self.isTouchEnabled = YES;
         possibleCells = [[CCArray alloc] initWithCapacity:13];
         killingPositions = [[CCArray alloc] initWithCapacity:4];
         if (_gameType == 1)
             maxScore = 20;
         else
-            maxScore = 12;
+            maxScore = 6;//12;
         
         NSString *kingTexture = [NSString stringWithFormat:@"%@Crown.png",
                                  [figureName substringToIndex:[figureName length]-4]];
@@ -105,8 +107,6 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
             if (_gameType == 1)
                 king.scale = 0.8;
             [_playerKingsBatch addChild:king];
-            
-            //init the score thing
         }
     }
     return self;
@@ -129,16 +129,6 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
     movingImage.position = newLocation;
 }
 
-- (CCSprite *) returnKingAt:(CGPoint)point visible:(BOOL)visible {
-    CCSprite *king;
-    CCARRAY_FOREACH([_playerKingsBatch children], king) {
-        if (CGPointEqualToPoint(king.position, point) && visible == king.visible) {
-            return king;
-        }
-    }
-    return nil;
-}
-
 - (void) findKingSpriteWithPosition:(CGPoint)oldPosition changeItTo:(CGPoint)newPosition command:(NSString *)command{
     CCSprite *king;
     CCARRAY_FOREACH([_playerKingsBatch children], king) {
@@ -150,6 +140,7 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
             }
         } else if ([command isEqualToString:@"showOld"]) {
             if (king.visible == NO && CGPointEqualToPoint(king.position, oldPosition)) {
+                //old position = 0x0
                 king.position = newPosition;
                 king.visible = YES;
                 break;
@@ -157,7 +148,13 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
         } else if ([command isEqualToString:@"newKing"]) {
             if (king.visible == NO && CGPointEqualToPoint(king.position, ccp(0.f,0.f))) {
                 king.position = newPosition;
-                king.visible = YES;
+                /*if ([[PlayerTwo sharedSecondPlayer] playVersusUser] == NO) {
+                    king.scale = 0.1f;
+                    CCSequence *show = [CCSequence actions:[CCShow action], [CCScaleBy actionWithDuration:1.f scale:10.f], nil];
+                    [king runAction:show];
+                } else {*/
+                    king.visible = YES;
+                //}
                 break;
             }
         } else if([command isEqualToString:@"hide"]) {
@@ -167,17 +164,12 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
             }
         } else if ([command isEqualToString:@"move"]) {
             if (king.visible == YES && CGPointEqualToPoint(king.position, oldPosition)) {
+                /*CCSequence *move = [CCSequence actions:[CCShow action],
+                                    [CCMoveTo actionWithDuration:0.3f position:newPosition],
+                                    nil];
+                [king runAction:move];*/
                 king.position = newPosition;
                 king.visible = YES;
-                break;
-            }
-        } else if ([command isEqualToString:@"placeIt"]) {
-            if (king.visible == NO && CGPointEqualToPoint(king.position, ccp(0.f,0.f))) {
-                king.position = oldPosition;
-                king.visible = YES;
-                CCSequence *seq = [CCSequence actions:[CCDelayTime actionWithDuration:FIGURE_SPEED],[CCMoveTo actionWithDuration:FIGURE_SPEED position:newPosition], nil];
-                [king runAction:seq];
-                 
                 break;
             }
         }
@@ -219,6 +211,8 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
                             [self checkForPlayerFigures:playerBatchNode andOpponentFigures:opponentBatchNode near:pointAfterNextPoint player:player killingMovesOnly:NO isKing:king from:nextPoint];
                         }
                     }
+                    
+                    
                     return YES;
                 }
             } else {
@@ -304,6 +298,8 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
             //check whether opponent still has some figures around. Check all 4 directions
             
             CGPoint possiblePoint = ccpAdd(point, ccp(i * oneCellWidth, j * oneCellWidth));
+            
+            //to UNDO change to 0.5f and remove 0.8
             CGRect cell = CGRectMake(possiblePoint.x - oneCellWidth * 0.4f, possiblePoint.y - oneCellWidth * 0.4f, oneCellWidth * 0.8f, oneCellWidth * 0.8f);
             if (CGRectContainsRect(board, cell)) {
             
@@ -312,7 +308,6 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
                     Figure *figure;
                     
                     //check every opponent's figure
-                    //BOOL finished = NO;
                     CCARRAY_FOREACH([opponent children], figure) {
                         
                         if (activeFigure.king == YES && _gameType != 0) {
@@ -329,9 +324,6 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
                                     cellAfternextCell = ccpAdd(figure.position,cellAfternextCell);
                                     if (![self checkForAnyFigureAt:cellAfternextCell]) {
                                         return YES;
-                                    } else {
-                                        //finished = YES;
-                                        break;
                                     }
                                 }
                                 //if there is no figure, checking next cell
@@ -340,9 +332,6 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
                                 previousCell = currentCell;
                                 currentCell = ccpAdd(currentCell, ccp(i * oneCellWidth, j * oneCellWidth));
                             }
-                            /*if (finished == YES) {
-                                break;
-                            }*/
                         }
                         else {
                             if (figure.dead == NO && CGRectContainsPoint(cell, figure.position)) {
@@ -409,31 +398,6 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
             
             activeFigure.position = possibleCell;
             
-            
-            
-            CGRect halfPossibleCellRect = CGRectMake(possibleCell.x - 0.25f * oneCellWidth,
-                                                     possibleCell.y - 0.25f * oneCellWidth,
-                                                     0.5f * oneCellWidth, 0.5f * oneCellWidth);
-            //possibleCell.y == kingsYForPlayerOne
-            if (activeFigure.king == YES) {
-                //if figure was a king, show king image
-                [self findKingSpriteWithPosition:firstLocation changeItTo:possibleCell command:@"showOld"];
-            } else if ((activeFigure.player == 1 &&
-                        CGRectContainsPoint(halfPossibleCellRect, ccp(possibleCell.x, kingsYForPlayerOne))
-                        && activeFigure.king == NO) ||
-                       (activeFigure.player == 2 &&
-                        CGRectContainsPoint(halfPossibleCellRect, ccp(possibleCell.x, kingsYForPlayerTwo)) &&
-                        activeFigure.king == NO)) {
-                           //if figure is a new king, change sprite and make it a KING!
-                           activeFigure.king = YES;
-                           [self findKingSpriteWithPosition:ccp(0.f,0.f) changeItTo:possibleCell command:@"newKing"];
-            } else if (activeFigure.king == NO) {
-                //if figure isn't a king, just show common image
-                activeFigure.visible = YES;
-            }
-            
-            
-            
             for (int j = 0; j < [killingPositions count]; j++) {
                 CGPoint possibleKilledCell = [[killingPositions objectAtIndex:j] CGPointValue];
                 
@@ -453,6 +417,8 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
                     CGRect possibleCellOfKilledFigure = CGRectMake(possibleKilledCell.x - oneCellWidth * 0.25f, possibleKilledCell.y - oneCellWidth * 0.25f, oneCellWidth * 0.5f, oneCellWidth * 0.5f);
                     while (CGRectContainsPoint(board, currentCell)) {
                         currentCell = ccpAdd(previousCell, nextCell);
+                                                        
+                            //delete between here and previous comments to undo
                     
                         if (CGRectContainsPoint(possibleCellOfKilledFigure, currentCell) ) {
                             changeMove = [self killActionsAt:activeFigure.position];// currentCell];
@@ -463,8 +429,27 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
                 }
             }
             
-            
-            //king check was here
+            CGRect halfPossibleCellRect = CGRectMake(possibleCell.x - 0.25f * oneCellWidth,
+                                                     possibleCell.y - 0.25f * oneCellWidth,
+                                                     0.5f * oneCellWidth, 0.5f * oneCellWidth);
+            //possibleCell.y == kingsYForPlayerOne
+            if (activeFigure.king == YES) {
+                //if figure was a king, show king image
+                [self findKingSpriteWithPosition:firstLocation changeItTo:possibleCell command:@"showOld"];
+            } else if ((activeFigure.player == 1 &&
+                        CGRectContainsPoint(halfPossibleCellRect, ccp(possibleCell.x, kingsYForPlayerOne))
+                        && activeFigure.king == NO) ||
+                       (activeFigure.player == 2 &&
+                        CGRectContainsPoint(halfPossibleCellRect, ccp(possibleCell.x, kingsYForPlayerTwo)) &&
+                        activeFigure.king == NO)) {
+                //if figure is a new king, change sprite and make it a KING!
+                activeFigure.king = YES;
+                [self findKingSpriteWithPosition:ccp(0.f,0.f) changeItTo:possibleCell command:@"newKing"];
+            } else if (activeFigure.king == NO) {
+                
+                //if figure isn't a king, just show common image
+                activeFigure.visible = YES;
+            }
             
             
             
@@ -476,6 +461,9 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
                     [PlayerOne sharedFirstPlayer].killerFigure = nil;
                     [[GameLevelLayer sharedGameLevelLayer] changeYourMoveLed:NO];
                     
+                    if ([[PlayerTwo sharedSecondPlayer] playVersusUser] == NO)
+                        //if playerOne plays versus computer, we should tell computer to make a move
+                        [[PlayerTwo sharedSecondPlayer] makeAMove];
                 } else {
                     [PlayerOne sharedFirstPlayer].yourMove = YES;
                     [PlayerTwo sharedSecondPlayer].yourMove = NO;
@@ -514,34 +502,8 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
     movingImage.visible = NO;
     activeFigure = nil;
     
-    int p1 = [[PlayerOne sharedFirstPlayer] score];
-    int p2 = [[PlayerTwo sharedSecondPlayer] score];
-    
-    CCLOG(@"maxscore %i", maxScore);
-    if (p1 == maxScore || p2 == maxScore) {
-        Figure *figure;
-        
-        CCLOG(@"maxscore2 %i", maxScore);
-        int compare1 = 0, compare2 = 0;
-        CCARRAY_FOREACH([[[PlayerOne sharedFirstPlayer] playerBatch] children], figure) {
-            if (figure.dead == YES)
-                compare2++;
-        }
-        CCARRAY_FOREACH([[[PlayerTwo sharedSecondPlayer] playerBatch] children], figure) {
-            if (figure.dead == YES)
-                compare1++;
-        }
-        if (p1 != compare1) {
-            CCLOG(@"\n\n\n\n\n\n\n\n\n\n\n\nattention! p1: %i c1: %i",p1,compare1);
-        }
-        
-        if (p1 != compare1) {
-            CCLOG(@"\n\n\n\n\n\n\n\n\n\n\n\nattention 22 ! p2: %i c2 %i",p2, compare2);
-        }
-        if (p1 == compare1 || p2 == compare2) {
-            [self runAction:[CCSequence actions:[CCDelayTime actionWithDuration:1],
-                             [CCCallFuncN actionWithTarget:self selector:@selector(endGame:)], nil]];
-        }
+    if ([[PlayerOne sharedFirstPlayer] score] == maxScore || [[PlayerTwo sharedSecondPlayer] score] == maxScore) {
+        [self endGame];
     }
 
 }
@@ -555,12 +517,7 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
     else
         arr = [[PlayerOne sharedFirstPlayer] playerBatch];
     
-    CGPoint multiplier = [self findMultiplierWithLastLocation:possibleCell startLocation:firstLocation];
-    CGPoint nextCell = CGPointMake(oneCellWidth * multiplier.x, oneCellWidth * multiplier.y);
-    nextCell = ccpMult(nextCell, -1);
-    CGPoint killedFigurePosition = ccpAdd(activeFigure.position, nextCell);
-    
-    //CGPoint killedFigurePosition = ccpMidpoint(possibleCell, firstLocation);
+    CGPoint killedFigurePosition = ccpMidpoint(possibleCell, firstLocation);
     //creating a half-cell
 
     
@@ -577,22 +534,16 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
             CGPoint previousCell = firstLocation;
             CGPoint currentCell = previousCell;
             CGRect board = [self getBoardRect];
-            CGRect activeFigureRect = CGRectMake(activeFigure.position.x - 0.4f * oneCellWidth,
-                                                 activeFigure.position.y - 0.4f * oneCellWidth, 0.8f * oneCellWidth, 0.8f * oneCellWidth);
             while (CGRectContainsPoint(board, currentCell)) {
                 currentCell = ccpAdd(previousCell, nextCell);
                 
-                if (CGRectContainsPoint(activeFigureRect, currentCell)) {
-                    break;
-                } else {
                 //creating a half-cell
-                    CGRect halfCurrentCell = CGRectMake(currentCell.x - oneCellWidth * 0.25f, currentCell.y - oneCellWidth * 0.25f, oneCellWidth * 0.5f, oneCellWidth * 0.5f);
-                    if (CGRectContainsPoint(halfCurrentCell, figure.position)) {
-                        killedFigure = figure;
-                        break;
-                    }
-                    previousCell = currentCell;
+                CGRect halfCurrentCell = CGRectMake(currentCell.x - oneCellWidth * 0.25f, currentCell.y - oneCellWidth * 0.25f, oneCellWidth * 0.5f, oneCellWidth * 0.5f);
+                if (CGRectContainsPoint(halfCurrentCell, figure.position)) {
+                    killedFigure = figure;
+                    break;
                 }
+                previousCell = currentCell;
             }
         }
     }
@@ -605,15 +556,25 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
         else if (killedFigure.player == 2)
             [[PlayerTwo sharedSecondPlayer] findKingSpriteWithPosition:killedFigure.position
                                                             changeItTo:ccp(0.f,0.f) command:@"dead"];
-        killedFigure.position = ccp(0.f,0.f);
     }
     if (killedFigure.player == 1) {
         //if we killed figure of Player 1
         
-        [[GameLevelLayer sharedGameLevelLayer] addPoint:2];
+        int oldScore = [[PlayerTwo sharedSecondPlayer] score] + 1;
+        [PlayerTwo sharedSecondPlayer].score = oldScore;
         
         //placing killed figure somewher
-        [self findaPlaceForAKilledFigure:killedFigure duration:0.0f];
+        CGSize screenSize = [[CCDirector sharedDirector] winSize];
+        
+        float score = [[PlayerTwo sharedSecondPlayer] score];
+        score *= 50;
+        CGPoint killedFiguresPlace = ccp(100 + score,screenSize.height - (screenSize.height - oneCellWidth * 8) * 0.2f);
+        if (killedFigure.king) {
+            [[PlayerOne sharedFirstPlayer] findKingSpriteWithPosition:ccp(0.f,0.f) changeItTo:killedFiguresPlace command:@"newKing"];
+        } else {
+            killedFigure.position = killedFiguresPlace;
+        }
+        
         //if player has other other figures to kill, we can't change MOVE property
         
         CGPoint prevoiusPosition = activeFigure.position;
@@ -625,25 +586,14 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
         
     } else if (killedFigure.player == 2) {
         //if we killed figure of Player 2
-        
-        [[GameLevelLayer sharedGameLevelLayer] addPoint:1];
-        
-        
+        int oldScore = [[PlayerOne sharedFirstPlayer] score] + 1;
+        [PlayerOne sharedFirstPlayer].score = oldScore;
         
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
         float score = [[PlayerOne sharedFirstPlayer] score];
         score *= 50;
-        float posY = (screenSize.height - oneCellWidth * 8) * 0.2f;
-        float posX = 100 + score;
-        if (_gameType == 1) {
-            posY -= oneCellWidth * 0.3f;
-        }
-        if (posX > screenSize.width - 50) {
-            posY -= oneCellWidth * 0.5f;
-            posX -= 50 * 10;
-        }
-        CGPoint killedFiguresPlace = ccp(posX,posY);
+        CGPoint killedFiguresPlace = ccp(100 + score,(screenSize.height - oneCellWidth * 8) * 0.2f);
         if (killedFigure.king) {
             [[PlayerTwo sharedSecondPlayer] findKingSpriteWithPosition:ccp(0.f,0.f) changeItTo:killedFiguresPlace command:@"newKing"];
         } else {
@@ -695,15 +645,14 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
     return board;
 }
 
-- (void) endGame:(id)selector {
+- (void) endGame {
     NSString *winner;
     if ([[PlayerOne sharedFirstPlayer] score] == maxScore) {
         winner = [NSString stringWithFormat:@"Player One"];
     } else {
         winner = [NSString stringWithFormat:@"Player Two"];
     }
-    CongratulationsLayer *congrats = [CongratulationsLayer createCongratsWith:winner];
-    [self addChild:congrats z:zForCongrats];
+    [[CCDirector sharedDirector] replaceScene:[CongratulationsLayer sceneWith:winner]];
 }
 
 - (BOOL) didFigureStoppedBefore:(CGPoint)killedCell from:(CGPoint)startLocation to:(CGPoint)stopLocation {
@@ -741,35 +690,6 @@ border:(float)border oneStep:(float)oneStep player:(int)player gameType:(int)gam
     else
         multiplier.y = -multiplier.y + (multiplier.y - 1);
     return multiplier;
-}
-
-- (void) findaPlaceForAKilledFigure:(Figure *)figure duration:(float)durationForKilledFigure {
-    CGSize screenSize = [[CCDirector sharedDirector] winSize];
-    float score = [[PlayerTwo sharedSecondPlayer] score];
-    score *= 50;
-    float posX = 100 + score;
-    float posY = screenSize.height - (screenSize.height - oneCellWidth * 8) * 0.2f;
-    if (_gameType == 1) {
-        posY += oneCellWidth * 0.3f;
-    }
-    if (posX > screenSize.width - 50) {
-        posY += oneCellWidth * 0.5f;
-        posX -= 50 * 10;
-    }
-    CGPoint killedFiguresPlace = ccp(posX,posY);
-    if (figure.king) {
-        if (figure.player == 1) {
-            [[PlayerOne sharedFirstPlayer]
-             findKingSpriteWithPosition:figure.position changeItTo:killedFiguresPlace command:@"placeIt"];
-        } else if (figure.player == 2) {
-            [[PlayerTwo sharedSecondPlayer]
-             findKingSpriteWithPosition:figure.position changeItTo:killedFiguresPlace command:@"placeIt"];
-        }
-    } else {
-        CCAction *seq = [CCSequence actions:[CCDelayTime actionWithDuration:durationForKilledFigure],[CCMoveTo actionWithDuration:FIGURE_SPEED position:killedFiguresPlace],
-                         [CCShow action], nil];
-        [figure runAction:seq];
-    }
 }
 
 @end

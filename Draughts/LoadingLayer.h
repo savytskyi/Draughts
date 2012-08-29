@@ -13,9 +13,11 @@ typedef enum {
 
 @interface LoadingLayer : CCLayer {
     TargetScenes targetScene;
+    int newGameType;
+    BOOL newPlayerTwo;
 }
 
-+ (id) loadTargetScene:(TargetScenes)loadScene;
-- (id) initWithScene:(TargetScenes)loadScene;
++ (id) loadTargetScene:(TargetScenes)loadScene withGameType:(int)gameType playerTwo:(BOOL)playerTwo;
+- (id) initWithScene:(TargetScenes)loadScene withGameType:(int)gameType playerTwo:(BOOL)playerTwo;
 
 @end

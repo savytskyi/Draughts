@@ -3,56 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[PlayerTwo ccTouchBegan:withEvent:]:PlayerTwo.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[figuresToKill objectAtIndex:0]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[PlayerEntity continueKillingLine:from:previousPoint:]:PlayerEntity.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "point">
-            </PersistentString>
-            <PersistentString
-               value = "activeFigure.position">
-            </PersistentString>
-            <PersistentString
-               value = "figure.position">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[PlayerEntity findKingSpriteWithPosition:changeItTo:command:]:PlayerEntity.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "king.position">
-            </PersistentString>
-            <PersistentString
-               value = "king.visible">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[PlayerEntity findKingSpriteForPosition:makeItVisible:]:PlayerEntity.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "king.visible">
-            </PersistentString>
-            <PersistentString
-               value = "king.position">
-            </PersistentString>
-            <PersistentString
-               value = "position">
-            </PersistentString>
-            <PersistentString
-               value = "visible">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[PlayerEntity checkForPlayerFigures:andOpponentFigures:near:player:killingMovesOnly:isKing:from:]:PlayerEntity.m">
          <PersistentStrings>
             <PersistentString
@@ -62,32 +12,13 @@
                value = "[killingPositions count]">
             </PersistentString>
             <PersistentString
-               value = "firstLocation">
+               value = "king">
             </PersistentString>
             <PersistentString
                value = "figure.position">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[Players ccTouchBegan:withEvent:]:Players.m">
-         <PersistentStrings>
             <PersistentString
-               value = "playerTwoBatch">
-            </PersistentString>
-            <PersistentString
-               value = "playerOneBatch">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[PlayerOne ccTouchBegan:withEvent:]:PlayerOne.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "_yourMove">
-            </PersistentString>
-            <PersistentString
-               value = "CGRectContainsPoint([figure boundingBox], touchLocation)">
+               value = "firstLocation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -109,10 +40,126 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[PlayerEntity finishMove]:PlayerEntity.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "movingImage.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerEntity killActionsAt:]:PlayerEntity.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "CGPointEqualToPoint(figure.position, killedFigurePosition)">
+            </PersistentString>
+            <PersistentString
+               value = "firstLocation">
+            </PersistentString>
+            <PersistentString
+               value = "figure.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerEntity checkForAnyFigureAt:]:PlayerEntity.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell">
+            </PersistentString>
+            <PersistentString
+               value = "activeFigure.position">
+            </PersistentString>
+            <PersistentString
+               value = "oneCellWidth">
+            </PersistentString>
+            <PersistentString
+               value = "board">
+            </PersistentString>
+            <PersistentString
+               value = "figure.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerEntity findKingSpriteWithPosition:changeItTo:command:]:PlayerEntity.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "king.position">
+            </PersistentString>
+            <PersistentString
+               value = "killedFigure.position">
+            </PersistentString>
+            <PersistentString
+               value = "king.visible">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerTwo killFigure:with:]:PlayerTwo.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[killingCellsForKingTransformation count]">
+            </PersistentString>
+            <PersistentString
+               value = "tempFigure.position">
+            </PersistentString>
+            <PersistentString
+               value = "[killingCells count]">
+            </PersistentString>
+            <PersistentString
+               value = "durationForKilledFigure">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerOne ccTouchBegan:withEvent:]:PlayerOne.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_yourMove">
+            </PersistentString>
+            <PersistentString
+               value = "_killerFigure.position">
+            </PersistentString>
+            <PersistentString
+               value = "CGRectContainsPoint([figure boundingBox], touchLocation)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerTwo isCellFree:figuresOfPlayer:]:PlayerTwo.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell">
+            </PersistentString>
+            <PersistentString
+               value = "figure.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[PlayerEntity ccTouchEnded:withEvent:]:PlayerEntity.m">
          <PersistentStrings>
             <PersistentString
+               value = "activeFigure.position">
+            </PersistentString>
+            <PersistentString
+               value = "possibleCell.y == kingsYForPlayerTwo">
+            </PersistentString>
+            <PersistentString
                value = "[killingPositions count]">
+            </PersistentString>
+            <PersistentString
+               value = "possibleCell.y == kingsYForPlayerOne">
+            </PersistentString>
+            <PersistentString
+               value = "[possibleCells count]">
+            </PersistentString>
+            <PersistentString
+               value = "currentCell">
+            </PersistentString>
+            <PersistentString
+               value = "kingsYForPlayerOne">
             </PersistentString>
             <PersistentString
                value = "[[killingPositions objectAtIndex:0] CGPointValue]">
@@ -120,10 +167,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[PlayerOne initWith:boardSize:]:PlayerOne.m">
+         contextName = "-[PlayerTwo findPossibleMovesForFigure:killingMovesOnly:]:PlayerTwo.m">
          <PersistentStrings>
             <PersistentString
-               value = "defaultPlayerFigureTexture">
+               value = "_playVersusUser">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerEntity didFigureStoppedBefore:from:to:]:PlayerEntity.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[killingPositions count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Players ccTouchBegan:withEvent:]:Players.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "playerTwoBatch">
+            </PersistentString>
+            <PersistentString
+               value = "playerOneBatch">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -139,28 +205,122 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[PlayerEntity killActionsAt:]:PlayerEntity.m">
+         contextName = "-[PlayerTwo updatePosition:data:]:PlayerTwo.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerTwo makeAMove]:PlayerTwo.m">
          <PersistentStrings>
             <PersistentString
-               value = "activeFigure.king">
+               value = "[maxKiller count]">
             </PersistentString>
             <PersistentString
-               value = "killedFigure.position">
-            </PersistentString>
-            <PersistentString
-               value = "previousCell">
-            </PersistentString>
-            <PersistentString
-               value = "currentCell">
+               value = "opponentFigure.position">
             </PersistentString>
             <PersistentString
                value = "figure.position">
             </PersistentString>
             <PersistentString
-               value = "board">
+               value = "possibleSavior.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerOne initWith:boardSize:]:PlayerOne.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "defaultPlayerFigureTexture">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerTwo findNearestOpponentTo:]:PlayerTwo.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentX">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerTwo canFigure:beKilledAt:]:PlayerTwo.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "point">
             </PersistentString>
             <PersistentString
-               value = "killedFigure.king">
+               value = "SEAttackPoint">
+            </PersistentString>
+            <PersistentString
+               value = "figure.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerEntity continueKillingLine:from:previousPoint:]:PlayerEntity.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "figure.position">
+            </PersistentString>
+            <PersistentString
+               value = "i">
+            </PersistentString>
+            <PersistentString
+               value = "j">
+            </PersistentString>
+            <PersistentString
+               value = "possiblePoint">
+            </PersistentString>
+            <PersistentString
+               value = "point">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "main:main.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "gameLevelLayerInstance">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerEntity findKingSpriteForPosition:makeItVisible:]:PlayerEntity.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "king.visible">
+            </PersistentString>
+            <PersistentString
+               value = "king.position">
+            </PersistentString>
+            <PersistentString
+               value = "position">
+            </PersistentString>
+            <PersistentString
+               value = "visible">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerTwo getSequenceArray:]:PlayerTwo.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerTwo ccTouchBegan:withEvent:]:PlayerTwo.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[figuresToKill objectAtIndex:0]">
+            </PersistentString>
+            <PersistentString
+               value = "figure.king">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerTwo killNextWith:]:PlayerTwo.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "opponent.position">
+            </PersistentString>
+            <PersistentString
+               value = "opponent.dead">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

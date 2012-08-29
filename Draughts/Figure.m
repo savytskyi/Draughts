@@ -11,7 +11,7 @@
 
 @implementation Figure
 
-+ (id) newFigureWithImage:(NSString *)image {
++ (id) createFigureWithImage:(NSString *)image {
 
     return [[[self alloc] initFigureWithImage:image] autorelease];
 }

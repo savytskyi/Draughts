@@ -19,7 +19,7 @@
 @property(readwrite,nonatomic) BOOL dead;
 @property(readwrite,nonatomic) int player;
 
-+ (id) newFigureWithImage: (NSString *)image;
++ (id) createFigureWithImage: (NSString *)image;
 - (id) initFigureWithImage: (NSString *)image;
 
 @end
