@@ -12,6 +12,8 @@ Three game modes:
 
 3. Soviet checkers. 8x8 field, 12 pieces, long range kings, backward moves.
 
+Github version ships without AI.
+
 [iTunes link:](http://)
 
 ![Draughts screenshot](https://github.com/savitsky/Draughts/blob/master/screenshot.png?raw=true)
