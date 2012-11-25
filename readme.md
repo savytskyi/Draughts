@@ -14,6 +14,6 @@ Three game modes:
 
 Github version ships without AI.
 
-[iTunes link:](http://)
+[iTunes link](https://itunes.apple.com/app/id556852843?mt=8)
 
-![Draughts screenshot](https://github.com/savitsky/Draughts/blob/master/screenshot.png?raw=true)
+![Draughts screenshot](https://github.com/savytskyi/Draughts/blob/master/screenshot.png?raw=true)
